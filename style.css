@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-image: url(./img/stars.jpeg);
+    background-size: cover;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.logoimg {
+    width: 252px;
+    height: 55px;
+}
+
+h1 {
+    color: white;
+    display: flex;
+    padding-left: 300px;
+}
+
+.h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.search {
+    width: 300px;
+    height: 30px;
+    color: black;
+
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    background-color: black;
+    border-radius: 15px;
+    padding: 20px;
+    gap: 10px;
+    margin: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.divClass {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.divClass {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 4px solid grey;
+    border-radius: 15px;
+}
+
+.divClass:hover {
+    transform: scale(1.1);
+}
+
+.divClass div {
+    padding: 11px 5px 5px 5px;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ImgYuji {
+    height: 400px;
+    width: 400px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.classImagem {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+}
+
+.descripition {
+    color: white;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.containerYuji {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    gap: 30px;
+
+    @media (max-width: 980px) {
+        flex-direction: column;
+
+    }
+}
+
+.containerYuji2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+}
+
+.textDescripition {
+    font-size: 20px;
+}
+
+ul li {
+    padding: 10px 0 10px 0;
+}
+
+.classMark {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    /* padding: 10px; */
+    border-radius: 15px;
+
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 12px;
+    /* Altura da barra de rolagem horizontal */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 8px;
+    /* Cor do trilho da barra de rolagem */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #0a0909;
+    /* Cor da "thumb" da barra de rolagem */
+    border-radius: 8px;
+    /* Arredonda os cantos da "thumb" */
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Cor da "thumb" ao passar o mouse */
+}
