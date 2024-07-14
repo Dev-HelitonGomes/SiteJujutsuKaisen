@@ -20,8 +20,8 @@ header {
 }
 
 .logoimg {
-    width: 252px;
-    height: 55px;
+    max-width: 252px;
+    width: 100%;
 }
 
 h1 {
@@ -35,50 +35,51 @@ h1 {
     font-size: 30px;
     font-weight: bold;
 }
-
+.search-container{
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
 .search {
     border-radius: 4px;
-    
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 30px;
 }
 
 .scroll-container {
+    color: white;
     display: flex;
     overflow-x: auto;
     background-color: black;
-    border-radius: 15px;
-    padding: 20px;
+    padding-bottom: 20px;
     gap: 10px;
     margin: 30px;
     width: 100%;
     max-width: 1200px;
 }
-
-.divClass {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: black;
-    border: 4px solid rgb(255, 255, 255);
-    border-radius: 6px;
-    transition: transform 0.3s ease;
+.contador{
+    color: white;
+    background-color: red;
 }
 
 .divClass {
     display: flex;
-    align-items: center;
+    justify-content: start;
+    padding: 0px;
+    border-radius: 15px;
     flex-direction: column;
     border: 4px solid grey;
-    border-radius: 15px;
+    background-color: black;
+    box-sizing: border-box;
+    min-width: 250px;
+    overflow: hidden;
 }
 
-.divClass:hover {
-    transform: scale(1.1);
-}
 
 .divClass div {
-    padding: 11px 5px 5px 5px;
+    padding: 15px 5px 5px 5px;
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
@@ -87,8 +88,8 @@ h1 {
 }
 
 .ImgYuji {
-    height: 400px;
-    width: 400px;
+    max-height: 400px;
+    max-width: 400px;
     border-radius: 15px;
     object-fit: cover;
 }
@@ -98,6 +99,13 @@ h1 {
     height: 250px;
     border-radius: 10px 10px 0 0;
     object-fit: cover;
+    transition: transform 0.3s ease;
+    
+}
+
+.classImagem:hover {
+    transform: scale(1.1);
+    
 }
 
 .descripition {
@@ -155,7 +163,7 @@ ul li {
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
-    background: #0a0909;
+    background: grey;
     /* Cor da "thumb" da barra de rolagem */
     border-radius: 8px;
     /* Arredonda os cantos da "thumb" */

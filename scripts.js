@@ -115,14 +115,16 @@ personagens.map((obj) => {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+var notFound = false
 function pesquisaPersonagem(event) {
+    var contador = 0
+
     if (event.key === "Enter") {
 
         const scrollContainer = document.querySelector(".scroll-container")
         const buttons = scrollContainer.querySelectorAll("button")
         buttons.forEach(botao => botao.remove())//forEach só pode ser usada porque ela é um array de botões e forEach é similar ao map.                     
-
+        
         personagens.map((obj) => {
             //O primeiro "TO lowercase" esta transformando para minusculo os nomes dos feiticeiros.
             //o includes este verificando se a string YUjI existe dentro do nome feiticeiros.
@@ -130,13 +132,15 @@ function pesquisaPersonagem(event) {
 
             //event.target.value (valor do meu input)
             //event.target.value.ToLowerCase (valor do meu input convertido em letra minúscula independetemente se digitarem letra maiúscula)
-            if (obj.nome.toLowerCase().includes(event.target.value.toLowerCase())) {
-                console.log("batata")
-                const button = document.createElement("button");                                  
-                const texto = document.createElement("div")                                   
-                const filhoDoTexto = document.createTextNode(obj.nome)                      
-                const tagImagem = document.createElement("img")                             
-                const scrollContainer = document.querySelector(".scroll-container")         
+           
+            if (obj.nome.toLowerCase().includes(event.target.value.toLowerCase()) || event.target.value === "") {
+                contador++
+                console.log(contador, event.target.value)
+                const button = document.createElement("button");
+                const texto = document.createElement("div")
+                const filhoDoTexto = document.createTextNode(obj.nome)
+                const tagImagem = document.createElement("img")
+                const scrollContainer = document.querySelector(".scroll-container")
 
                 button.addEventListener("click", function () {
                     const descripition = document.querySelector(".textDescripition")
@@ -151,16 +155,30 @@ function pesquisaPersonagem(event) {
 
                 })
 
-                tagImagem.src = obj.imagem                                            
-                button.appendChild(tagImagem);                                                                 
-                texto.appendChild(filhoDoTexto);                                                            
-                button.appendChild(texto);                                                                    
+                tagImagem.src = obj.imagem
+                button.appendChild(tagImagem);
+                texto.appendChild(filhoDoTexto);
+                button.appendChild(texto);
                 scrollContainer.appendChild(button);
-                tagImagem.classList = "classImagem"                                         
+                tagImagem.classList = "classImagem"
                 button.classList = "divClass"
             }
 
         })
+        if (contador === 0 && notFound === false) {
+            notFound = true
+            const scrollContainer = document.querySelector(".scroll-container")
+            const divBatata = document.createElement("div")
+            const texto = document.createTextNode("Não Encontrado.")
+            divBatata.appendChild(texto)
+            divBatata.classList = "contador"
+            scrollContainer.appendChild(divBatata)
+
+        } else if (contador !== 0 && notFound === true) {
+            notFound = false
+            scrollContainer.querySelector(".contador").remove()
+
+        }
     }
 
 }
