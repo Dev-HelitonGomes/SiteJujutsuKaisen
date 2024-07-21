@@ -10,6 +10,7 @@ body {
     align-items: center;
     flex-direction: column;
     padding: 30px;
+    gap: 32px;
 }
 
 header {
@@ -17,6 +18,7 @@ header {
     align-items: center;
     max-width: 1200px;
     width: 100%;
+    margin-bottom: 32px;
 }
 
 .logoimg {
@@ -37,7 +39,6 @@ h1 {
 }
 .search-container{
     display: flex;
-    margin-top: 30px;
     width: 100%;
     max-width: 1200px;
 }
@@ -55,7 +56,6 @@ h1 {
     background-color: black;
     padding-bottom: 20px;
     gap: 10px;
-    margin: 30px;
     width: 100%;
     max-width: 1200px;
 }
@@ -151,6 +151,17 @@ ul li {
 
 }
 
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 80px;
+    margin-top: 32px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
 .scroll-container::-webkit-scrollbar {
     height: 12px;
     /* Altura da barra de rolagem horizontal */
